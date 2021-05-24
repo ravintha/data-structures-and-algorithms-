@@ -1,4 +1,14 @@
 
+#######################
+## An anagram is when the two strings can be written using the exact same letters
+## For example:
+
+### "public relations" is an anagram of "crap built on lies."
+
+###"clint eastwood" is an anagram of "old west action"
+
+#######################
+
 def anagram2(s1,s2):
     
     # Remove spaces and lowercase letters
