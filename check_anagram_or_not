@@ -1,0 +1,36 @@
+
+def anagram2(s1,s2):
+    
+    # Remove spaces and lowercase letters
+    a1 = a1.replace(' ','').lower()
+    a2 = a2.replace(' ','').lower()
+    
+    # Edge Case to check if same number of letters
+    if len(s1) != len(s2):
+        return False
+    
+    # Create counting dictionary (Note: could also use DefaultDict from Collections module)
+    count = {}
+    
+       
+    # Fill dictionary for first string (add counts)
+    for letter in a1:
+        if letter in count:
+            count[letter] += 1
+        else:
+            count[letter] = 1
+            
+    # Fill dictionary for second string (subtract counts)
+    for letter in a2:
+        if letter in count:
+            count[letter] -= 1
+        else:
+            count[letter] = 1
+    
+    # Check that all counts are 0
+    for c in count:
+        if count[c] != 0:
+            return False
+
+    # Otherwise they're anagrams
+    return True
